@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../Component/Product/CartContext';
+
 const ProductDetail = () => {
     const [quantity, setQuantity] = React.useState(1);
-    const [cart , setCart] = useState([]);
+    const [cart, setCart] = useState([]);
+
+    const { addToCart } = useContext(CartContext);
 
 
     const handleAddToCart = () => {
@@ -18,7 +22,7 @@ const ProductDetail = () => {
         alert(`${product.name} đã được thêm vào giỏ hàng!`);
     };
 
-    return (                                               
+    return (
         <div>
             <div className="max-w-6xl mx-auto p-6 flex gap-8">
                 <div className="w-1/2">
@@ -57,7 +61,7 @@ const ProductDetail = () => {
                         onClick={handleAddToCart}
                         className="mt-4 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded"
                     >
-                       <Link to='/cart'>Mua hàng</Link> 
+                        <Link to='/cart'>Mua hàng</Link>
                     </button>
 
                     <div className="mt-6 text-sm text-gray-700">

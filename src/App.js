@@ -8,6 +8,9 @@ import Footer from './Component/Footer/Footer.jsx';
 import Following from './pages/Following/Following.jsx';
 import ProductDetail from './Component/Product/ProductDetail.jsx';
 import Navbar from './Component/Navbar/Navbar.jsx';
+import Introduct from './Component/Introduct/Introduct.jsx';
+import { CartProvider } from './Component/Product/CartContext.jsx';
+import CartPage from './Component/Product/CartPage.jsx';
 
 
 function App() {
@@ -22,34 +25,54 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Following />} />
-        <Route path="/login" element={
-          <>
+    // <BrowserRouter>
+    <Routes>
+      {/* <Route path="/" element={<App />} /> */}
+      <Route path="/" element={<Following />} />
+      <Route path="/gioithieu" element={<>
+        <Navbar />
+        <Introduct />
+        <Footer />
+      </>} />
+      <Route path="/login" element={
+        <>
           <Navbar />
           <Login />
-          <Footer />  
-          </>
-          } />
-        <Route path='/register' element={
-           <>
-           <Navbar />
-           <Register />
-           <Footer />
-           </>
-           } />
-        <Route path='/product-detail' element={
+          <Footer />
+        </>
+      } />
+      <Route path='/register' element={
+        <>
+          <Navbar />
+          <Register />
+          <Footer />
+        </>
+      } />
+
+      <Route path='/product-detail' element={<>
+        <Navbar />
+        <ProductDetail />
+      </>} />
+
+      <Route path='/cart' element={<>
+        <Navbar />
+        <CartPage />
+        <Footer />
+      </>} />
+
+      {/* <Route path='/product-detail' element={
           <>
             <Navbar />
             <ProductDetail />
           </>
-        } />
-        {/* <Route path='/productIcon' element={<ProductIcon />} /> */}
-        {/* <ProductDetail  onAddToCart={handleAddToCart} /> */}
-        <Route path='/footer' element={<Footer />} />
-      </Routes>
-    </BrowserRouter>
+        } /> */}
+      {/* <Route path='/productIcon' element={<ProductIcon />} /> */}
+      {/* <ProductDetail  onAddToCart={handleAddToCart} /> */}
+      <Route path='/footer' element={<Footer />} />
+    </Routes>
+
+
+    // </BrowserRouter>
   );
 }
 
