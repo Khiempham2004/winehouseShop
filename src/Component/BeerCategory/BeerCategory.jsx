@@ -133,29 +133,6 @@ export default function BeerCategory() {
                         </div>
                     </div>
                     <div className="product-grid">
-                        {/* {fetchProducts.map(p => (
-                            <div className="product-card" key={p.id}>
-                                {p.discount && <span className="discount">{p.discount}%</span>}
-                                <img src={p.image} alt={p.name} />
-                                <h4>{p.name}</h4>
-                                <p className="price">{formatCurrency(p.price)}</p>
-                                {p.oldPrice && (
-                                    <p className="old-price">{formatCurrency(p.oldPrice)}</p>
-                                )}
-                                {p.name.includes("Muscat") && <button className="buy-btn" >Mua hàng</button>}
-                            </div>
-                        ))}
-                        */}
-
-                        {/* <div className='product-card' >
-                                <img src="https://bizweb.dktcdn.net/thumb/medium/100/022/044/products/ruou24.jpg?v=1445851659983" alt="Banner" style={{ width: 'auto', height: 'auto' }} />
-                                <Link to='/ruou-remy-martin-club' className='product-link'>
-                                <p>Rượu Remy Martin CLUB</p>
-                                </Link>
-                                <p className='product-price'>1.230.0000đ</p>
-                                <button className='buy-btn'>Mua hàng</button>
-                            </div> */}
-
                         <div className="product-card">
                             <Link to="/ruou-remy-martin-club" className="product-link">
                                 <img

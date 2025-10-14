@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { CartContext } from './CartContext';
 
+
 function Product() {
   const { addToCart } = React.useContext(CartContext);
 
@@ -32,7 +33,7 @@ function Product() {
     },
     {
       id: 4,
-      name: "Rượu California Muscat",
+      name: "Rượu California Muscat ",
       price: 2000000,
       originalPrice: 2000000,
       image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/19.png?v=1445850433743",
@@ -114,52 +115,6 @@ function Product() {
           </div>
         ))}
       </div>
-
-
-      {/* <div className="flex gap-6 justify-center p-6 flex-wrap">
-        {product.map((product) => (
-          <div
-            key={product.id}
-            className="relative bg-white p-4 shadow rounded-lg w-64 text-center"
-          >
-            {product.discount && (
-              <div className="absolute top-2 left-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-br-md">
-                {product.discount}
-              </div>
-            )}
-
-            <Link to='/product-detail'>
-              <img
-                src={product.image}
-                alt={product.name}
-                className="h-48 w-full object-contain mx-auto"
-              />
-            </Link>
-
-            <p className="mt-2 text-gray-800">{product.name}</p>
-            <div className="mt-1">
-              <span className="text-orange-600 font-bold text-lg">
-                {product.price.toLocaleString()}₫
-              </span>
-
-              {product.oldPrice && (
-                <span className="text-gray-400 line-through ml-2 text-sm">
-                  {product.oldPrice.toLocaleString()}₫
-                </span>
-              )}
-            </div>
-
-            <Link>
-              <button
-                className="mt-3 bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600"
-                onClick={() => handleBuy(product)}
-              >
-                Mua hàng
-              </button>
-            </Link>
-          </div>
-
-        ))} */}
     </div>
 
   )

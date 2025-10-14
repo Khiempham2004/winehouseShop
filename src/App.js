@@ -11,6 +11,8 @@ import Navbar from './Component/Navbar/Navbar.jsx';
 import Introduct from './Component/Introduct/Introduct.jsx';
 import { CartProvider } from './Component/Product/CartContext.jsx';
 import CartPage from './Component/Product/CartPage.jsx';
+import MixedWine from './Component/ProductcardWine/MixedWine.js';
+
 
 
 function App() {
@@ -19,60 +21,52 @@ function App() {
   const [cartItems, setCartItems] = useState([]); // Giỏ hàng
   const [quantity, setQuantity] = useState(1); // Số lượng sản phẩm
 
-  const handleAddToCart = (product) => {
-    setCartItems([...cartItems, { ...product, quantity }]);
-    alert(`${product.name} đã được thêm vào giỏ hàng!`);
-  };
+
 
   return (
-    // <BrowserRouter>
-    <Routes>
-      {/* <Route path="/" element={<App />} /> */}
-      <Route path="/" element={<Following />} />
-      <Route path="/gioithieu" element={<>
-        <Navbar />
-        <Introduct />
-        <Footer />
-      </>} />
-      <Route path="/login" element={
-        <>
+    <CartProvider>
+      <Routes>
+        <Route path="/" element={<Following />} />
+        <Route path="/gioithieu" element={<>
           <Navbar />
-          <Login />
+          <Introduct />
           <Footer />
-        </>
-      } />
-      <Route path='/register' element={
-        <>
-          <Navbar />
-          <Register />
-          <Footer />
-        </>
-      } />
-
-      <Route path='/product-detail' element={<>
-        <Navbar />
-        <ProductDetail />
-      </>} />
-
-      <Route path='/cart' element={<>
-        <Navbar />
-        <CartPage />
-        <Footer />
-      </>} />
-
-      {/* <Route path='/product-detail' element={
+        </>} />
+        <Route path="/login" element={
           <>
             <Navbar />
-            <ProductDetail />
+            <Login />
+            <Footer />
           </>
-        } /> */}
-      {/* <Route path='/productIcon' element={<ProductIcon />} /> */}
-      {/* <ProductDetail  onAddToCart={handleAddToCart} /> */}
-      <Route path='/footer' element={<Footer />} />
-    </Routes>
+        } />
+        <Route path='/register' element={
+          <>
+            <Navbar />
+            <Register />
+            <Footer />
+          </>
+        } />
 
+        <Route path='/product-detail' element={<>
+          <Navbar />
+          <ProductDetail />
+        </>} />
 
-    // </BrowserRouter>
+        <Route path='/cart' element={<>
+          <Navbar />
+          <CartPage />
+          <Footer />
+        </>} />
+
+        <Route path='/ruou-pha' element={<>
+          <Navbar />
+          <MixedWine />
+          <Footer />
+        </>} />
+
+        <Route path='/footer' element={<Footer />} />
+      </Routes>
+    </CartProvider>
   );
 }
 

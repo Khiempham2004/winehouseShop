@@ -18,6 +18,7 @@ const ProductDetail = () => {
             image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou24.jpg?v=1445851659983",
             quantity: quantity
         };
+        addToCart(product);
         setCart([...cart, product]);
         alert(`${product.name} đã được thêm vào giỏ hàng!`);
     };

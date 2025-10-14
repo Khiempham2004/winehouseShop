@@ -1,11 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom';
 export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [forgotEmail, setForgotEmail] = useState('')
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -16,6 +17,10 @@ export default function Login() {
     e.preventDefault()
     alert(`Yêu cầu thay đổi mật khẩu cho email: ${forgotEmail}`)
   };
+
+  const handleSubmit = () => {
+    navigate('/');
+  }
 
 
   return (
@@ -63,6 +68,7 @@ export default function Login() {
             </div>
 
             <button
+              onClick={handleSubmit}
               type="submit"
               className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded"
             >
