@@ -12,7 +12,7 @@ import Introduct from './Component/Introduct/Introduct.jsx';
 import { CartProvider } from './Component/Product/CartContext.jsx';
 import CartPage from './Component/Product/CartPage.jsx';
 import MixedWine from './Component/ProductcardWine/MixedWine.js';
-
+import ForeignWine from './Component/ProductcardWine/ForeignWine.js';
 
 
 function App() {
@@ -61,6 +61,12 @@ function App() {
         <Route path='/ruou-pha' element={<>
           <Navbar />
           <MixedWine />
+          <Footer />
+        </>} />
+        <Route path='/ruou-ngoai' element={
+          <>
+          <Navbar />
+          <ForeignWine />
           <Footer />
         </>} />
 
