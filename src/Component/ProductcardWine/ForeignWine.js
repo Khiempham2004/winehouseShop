@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import '../ProductcardWine/ProductcardWine.css'
+import axios from 'axios';
 
 const productForeign = [
   {
@@ -63,6 +64,28 @@ export default function ForeignWine() {
   const [wines, setWines] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const fetchWines = async () => {
+      try {
+        const response = await axios.get('');
+        setWines(response.data);
+      } catch (error) {
+        console.error("Lỗi tải dữ liệu : ", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchWines();
+  }, []);
+
+  if (loading) {
+    return <div className="text-center text-gray-500 mt-10">Loading...</div>;
+  }
+
+  const handleAddToCart = (product) => {
+    console.log("Da them gio hang : ", product);
+    alert(`${product.name} đã được thêm vào giỏ hàng!`);
+  }
 
 
   return (
@@ -94,16 +117,16 @@ export default function ForeignWine() {
             <aside className="MixedWine-sidebar">
               <h3>DANH MỤC 2</h3>
               <ul>
-                <li><Link to="/products/beer-mix">Rượu pha (9)</Link></li>
-                <li><Link to="/products/foreign-wine">Rượu ngoại (8)</Link></li>
-                <li><Link to="/products/appreciation-wine">Rượu tri ân (20)</Link></li>
-                <li><Link to="/products/vodka">Rượu Vodka (9)</Link></li>
-                <li><Link to="/products/gift-basket">Giỏ quà biếu (9)</Link></li>
-                <li><Link to="/products/imported-wine">Rượu vang nhập khẩu (9)</Link></li>
-                <li><Link to="/products/coming-soon">Hàng sắp về (9)</Link></li>
-                <li><Link to="/products/new-arrivals">Hàng mới về (9)</Link></li>
-                <li><Link to="/products/best-sellers">Sản phẩm bán chạy (9)</Link></li>
-                <li><Link to="/products/special-offers">Sản phẩm giá ưu đãi (9)</Link></li>
+                <li><Link to="/ruou_pha">Rượu pha (9)</Link></li>
+                <li><Link to="/ruou_ngoai">Rượu ngoại (8)</Link></li>
+                <li><Link to="/ruou_tri_an">Rượu tri ân (20)</Link></li>
+                <li><Link to="/ruou_volka">Rượu Vodka (9)</Link></li>
+                <li><Link to="/gio_qua_bieu">Giỏ quà biếu (9)</Link></li>
+                <li><Link to="/ruou_vang_nhap_khau">Rượu vang nhập khẩu (9)</Link></li>
+                <li><Link to="/hang_sap_ve">Hàng sắp về (9)</Link></li>
+                <li><Link to="/hang_moi_ve">Hàng mới về (9)</Link></li>
+                <li><Link to="/san_pham_ban_chay">Sản phẩm bán chạy (9)</Link></li>
+                <li><Link to="/san_pham_gia_uu_dai">Sản phẩm giá ưu đãi (9)</Link></li>
               </ul>
             </aside>
           </div>
@@ -112,10 +135,8 @@ export default function ForeignWine() {
         <div className="max-w-7xl mx-auto py-10 px-4">
           <div className="flex justify-between items-center border-b pb-2 mb-6">
             <h2 className="text-xl font-semibold">RƯỢU NGOẠI</h2>
-            {/* <div className="text-gray-500 text-sm">Thứ tự ▾</div> */}
           </div>
 
-          {/* Danh sách sản phẩm */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
             {productForeign.map((item) => (
               <div
@@ -129,7 +150,6 @@ export default function ForeignWine() {
                   </span>
                 )}
 
-                {/* Hình ảnh */}
                 <img
                   src={item.image}
                   alt={item.name}
@@ -152,7 +172,7 @@ export default function ForeignWine() {
                     )}
                   </div>
                   <button
-                    // onClick={() => handleAddToCart(item)}
+                    onClick={() => handleAddToCart(productForeign)}
                     className="mt-3 w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition font-medium"
                   >
                     Mua hàng

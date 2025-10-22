@@ -43,16 +43,16 @@ function Navbar() {
                                 isOpen && (
                                     <div className='absolute top-full left-0 mt-2 w-56 bg-white border shadow-lg z-50'>
                                         <ul className='text-sm py-2'>
-                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/ruou-pha">Rượu pha</Link></li>
-                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/ruou-ngoai">Rượu ngoại</Link></li>
-                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/tri-an">Rượu tri ân</Link></li>
-                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/vodka">Rượu Vodka</Link></li>
-                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/qua-bieu">Giỏ quà biếu</Link></li>
-                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/vang-nhap-khau">Rượu vang nhập khẩu</Link></li>
-                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/hang-sap-ve">Hàng sắp về</Link></li>
-                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/hang-moi-ve">Hàng mới về</Link></li>
-                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/ban-chay">Sản phẩm bán chạy</Link></li>
-                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/uu-dai">Sản phẩm giá ưu đãi</Link></li>
+                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/ruou_pha">Rượu pha</Link></li>
+                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/ruou_ngoai">Rượu ngoại</Link></li>
+                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/ruou_tri_an">Rượu tri ân</Link></li>
+                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/ruou_volka">Rượu Volka</Link></li>
+                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/gio_qua_bieu">Giỏ quà biếu</Link></li>
+                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/van_nhap_khau">Rượu vang nhập khẩu</Link></li>
+                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/hang_sap_ve">Hàng sắp về</Link></li>
+                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/hang_moi_ve">Hàng mới về</Link></li>
+                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/san_pham_ban_chay">Sản phẩm bán chạy</Link></li>
+                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/san_pham_gia_uu_dai">Sản phẩm giá ưu đãi</Link></li>
                                         </ul>
                                     </div>
                                 )}

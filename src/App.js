@@ -13,16 +13,15 @@ import { CartProvider } from './Component/Product/CartContext.jsx';
 import CartPage from './Component/Product/CartPage.jsx';
 import MixedWine from './Component/ProductcardWine/MixedWine.js';
 import ForeignWine from './Component/ProductcardWine/ForeignWine.js';
+import Wineforpeace from './Component/ProductcardWine/Wineforpeace.js';
+import VolkaWine from './Component/ProductcardWine/VolkaWine.js';
 
 
 function App() {
   const [count, setCount] = useState(0);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [cartItems, setCartItems] = useState([]); // Giỏ hàng
-  const [quantity, setQuantity] = useState(1); // Số lượng sản phẩm
-
-
-
+  // const [cartItems, setCartItems] = useState([]); // Giỏ hàng
+  // const [quantity, setQuantity] = useState(1); // Số lượng sản phẩm 
   return (
     <CartProvider>
       <Routes>
@@ -58,15 +57,26 @@ function App() {
           <Footer />
         </>} />
 
-        <Route path='/ruou-pha' element={<>
+        <Route path='/ruou_pha' element={<>
           <Navbar />
           <MixedWine />
           <Footer />
         </>} />
-        <Route path='/ruou-ngoai' element={
+        <Route path='/ruou_ngoai' element={
           <>
+            <Navbar />
+            <ForeignWine />
+            <Footer />
+          </>} />
+
+        <Route path='/ruou_tri_an' element={<>
           <Navbar />
-          <ForeignWine />
+          <Wineforpeace />
+          <Footer />
+        </>} />
+        <Route path='/ruou_volka' element={<>
+          <Navbar />
+          <VolkaWine />
           <Footer />
         </>} />
 

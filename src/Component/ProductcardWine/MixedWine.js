@@ -1,67 +1,90 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import '../ProductcardWine/ProductcardWine.css'
+import axios from 'axios';
 
+const productMixedWine = [
+  {
+    id: 1,
+    name: "CHAMPANGE PHÁP",
+    image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/59.jpg?v=1445850613170",
+    price: "250.000₫",
+  },
+  {
+    id: 2,
+    name: "Rượu Black Tie Affair",
+    image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou-black-tie-affair.jpg?v=1444808783813",
+    price: "1.400.000₫",
+  },
+  {
+    id: 3,
+    name: "Rượu Cross Sauvignon",
+    image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/53-min.png?v=1469181800943",
+    price: "1.500.000₫",
+  },
+  {
+    id: 4,
+    name: "Rượu Mugi Shochu",
+    image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou11-2484f54b-d024-47c2-a103-1ad8a15a706f.jpg?v=1446197317800",
+    price: "580.000₫",
+  },
+  {
+    id: 5,
+    name: "Rượu Passion Sparkling",
+    image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/49-min.jpg?v=1469181848227",
+    price: "150.000₫",
+    oldPrice: "1.600.000₫",
+    discount: "6%",
+  },
+  {
+    id: 6,
+    name: "Rượu Royal Salute 100 Cask",
+    image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou37.jpg?v=1445848258203",
+    price: "1.130.000₫",
+    oldPrice: "1.500.000₫",
+    discount: "25%",
+  },
+  {
+    id: 7,
+    name: "Rượu Royal Salute 200",
+    image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou38-c7a1b352-5ed6-49c0-9b8a-ad67cfaccc36.jpg?v=1446168342000",
+    price: "1.200.000₫",
+    oldPrice: "1.430.000₫",
+    discount: "16%",
+  },
+  {
+    id: 8,
+    name: "Rượu Whisky Nhật Bản",
+    image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou36-bd83d465-be7d-4358-a8df-b026930eb5d9.gif?v=1446197036540",
+    price: "13.000.000₫",
+  },
+];
 
 export default function MixedWine() {
-  const productMixedWine = [
-    {
-      id: 1,
-      name: "CHAMPANGE PHÁP",
-      image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/59.jpg?v=1445850613170",
-      price: "250.000₫",
-    },
-    {
-      id: 2,
-      name: "Rượu Black Tie Affair",
-      image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou-black-tie-affair.jpg?v=1444808783813",
-      price: "1.400.000₫",
-    },
-    {
-      id: 3,
-      name: "Rượu Cross Sauvignon",
-      image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/53-min.png?v=1469181800943",
-      price: "1.500.000₫",
-    },
-    {
-      id: 4,
-      name: "Rượu Mugi Shochu",
-      image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou11-2484f54b-d024-47c2-a103-1ad8a15a706f.jpg?v=1446197317800",
-      price: "580.000₫",
-    },
-    {
-      id: 5,
-      name: "Rượu Passion Sparkling",
-      image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/49-min.jpg?v=1469181848227",
-      price: "150.000₫",
-      oldPrice: "1.600.000₫",
-      discount: "6%",
-    },
-    {
-      id: 6,
-      name: "Rượu Royal Salute 100 Cask",
-      image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou37.jpg?v=1445848258203",
-      price: "1.130.000₫",
-      oldPrice: "1.500.000₫",
-      discount: "25%",
-    },
-    {
-      id: 7,
-      name: "Rượu Royal Salute 200",
-      image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou38-c7a1b352-5ed6-49c0-9b8a-ad67cfaccc36.jpg?v=1446168342000",
-      price: "1.200.000₫",
-      oldPrice: "1.430.000₫",
-      discount: "16%",
-    },
-    {
-      id: 8,
-      name: "Rượu Whisky Nhật Bản",
-      image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou36-bd83d465-be7d-4358-a8df-b026930eb5d9.gif?v=1446197036540",
-      price: "13.000.000₫",
-    },
-  ];
-
   const [cart, setCart] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchMixed = async () => {
+      try {
+        const res = await axios.get('');
+      } catch (error) {
+        console.error("Lỗi khi lấy dữ liệu rượu pha:", error);
+      }
+    }
+  }, []);
+
+  // if (loading) {
+  //   return <div className='text-center text-gray-500 mt-10'>Loading...</div>;
+  // };
+
+  const handleAddToCartMixed = (product) => {
+    console.log("Da them vao gio", product);
+    alert(`${product.name} da duoc them vao gio hang!`);
+    // addToCartMixedWine(product);
+  };
+
+
 
   // Hàm thêm sản phẩm vào giỏ hàng
 
@@ -168,8 +191,8 @@ export default function MixedWine() {
 
                   {/* Nút mua hàng luôn hiển thị */}
                   <button
-                    onClick={() => addToCartMixedWine(item)}
-                    className=" font-medium"
+                    onClick={() => handleAddToCartMixed(productMixedWine)}
+                    className=" mt-3 w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition font-medium"
                   >
                     Mua hàng
                   </button>

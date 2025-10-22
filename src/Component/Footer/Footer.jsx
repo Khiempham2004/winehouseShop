@@ -113,9 +113,9 @@ export default function Footer() {
                         <h3 className="font-bold uppercase mb-4">Thông Tin</h3>
                         <ul className="space-y-2">
                             <li><Link to="/"> > Trang chủ</Link></li>
-                            <li><Link to="/gioi-thieu"> > Giới thiệu</Link></li>
-                            <li><Link to="/san-pham"> > Sản phẩm</Link></li>
-                            <li><Link to="/tin-tuc"> > Tin tức</Link></li>
+                            <li><Link to="/gioithieu"> > Giới thiệu</Link></li>
+                            <li><Link to="/sanpham"> > Sản phẩm</Link></li>
+                            <li><Link to="/tintuc"> > Tin tức</Link></li>
                         </ul>
                     </div>
 
