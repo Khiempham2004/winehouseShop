@@ -178,7 +178,7 @@ export default function Wineforpeace() {
                       )}
                     </div>
                     <button
-                      onClick={() => handleAddToCartForpeace(productcardWine)}
+                      onClick={() => handleAddToCartForpeace(item)}
                       className="mt-3 w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition font-medium"
                     >
                       Mua hàng

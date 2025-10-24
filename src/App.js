@@ -15,6 +15,14 @@ import MixedWine from './Component/ProductcardWine/MixedWine.js';
 import ForeignWine from './Component/ProductcardWine/ForeignWine.js';
 import Wineforpeace from './Component/ProductcardWine/Wineforpeace.js';
 import VolkaWine from './Component/ProductcardWine/VolkaWine.js';
+import ImportedWine from './Component/ProductcardWine/ImportedWine.js';
+import SpicalriceWine from './Component/ProductcardWine/SpicalriceWine.js';
+import BestsellerWine from './Component/ProductcardWine/BestsellerWine.js';
+import NewarivalWine from './Component/ProductcardWine/NewarivalWine.js';
+import StoreWine from './Component/ProductcardWine/StoreWine.js';
+import ThroughWine from './Component/ProductcardWine/ThroughWine.js';
+import Contact from './Component/Contact/Contact.jsx';
+
 
 
 function App() {
@@ -77,6 +85,50 @@ function App() {
         <Route path='/ruou_volka' element={<>
           <Navbar />
           <VolkaWine />
+          <Footer />
+        </>} />
+
+        <Route path='/ruou_vang_nhap_khau' element={<>
+          <Navbar />
+          <ImportedWine />
+          <Footer />
+        </>} />
+
+        <Route path='/gio_qua_bieu' element={
+          <>
+            <Navbar />
+            <SpicalriceWine />
+            <Footer />
+          </>
+        } />
+
+        <Route path='/san_pham_ban_chay' element={<>
+          <Navbar />
+          <BestsellerWine />
+          <Footer />
+        </>} />
+
+        <Route path='/hang_moi_ve' element={<>
+          <Navbar />
+          <NewarivalWine />
+          <Footer />
+        </>} />
+
+        <Route path='/hang_sap_ve' element={<>
+          <Navbar />
+          <ThroughWine />
+          <Footer />
+        </>} />
+
+        <Route path='/san_pham_gia_uu_dai' element={<>
+          <Navbar />
+          <StoreWine />
+          <Footer />
+        </>} />
+
+        <Route path='/lienhe' element={<>
+          <Navbar />
+          <Contact />
           <Footer />
         </>} />
 

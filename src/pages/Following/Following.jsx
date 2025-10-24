@@ -14,13 +14,12 @@ function Following() {
   return (
     <div>
       <Navbar />
-      <Home/>
-      <Product/>
-      <Staticimage/>
-      <BeerCategory/>
-      <Winelist/>
+      <Home />
+      <Product />
+      <Staticimage />
+      <BeerCategory />
+      <Winelist />
       <Footer />
-      {/* <ProducCard/> */}
     </div>
   )
 }

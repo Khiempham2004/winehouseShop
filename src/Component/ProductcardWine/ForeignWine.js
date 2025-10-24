@@ -172,7 +172,7 @@ export default function ForeignWine() {
                     )}
                   </div>
                   <button
-                    onClick={() => handleAddToCart(productForeign)}
+                    onClick={() => handleAddToCart(item)}
                     className="mt-3 w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition font-medium"
                   >
                     Mua hàng

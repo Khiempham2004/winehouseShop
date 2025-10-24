@@ -48,7 +48,7 @@ function Navbar() {
                                             <li className="px-4 py-2 hover:bg-gray-100"><Link to="/ruou_tri_an">Rượu tri ân</Link></li>
                                             <li className="px-4 py-2 hover:bg-gray-100"><Link to="/ruou_volka">Rượu Volka</Link></li>
                                             <li className="px-4 py-2 hover:bg-gray-100"><Link to="/gio_qua_bieu">Giỏ quà biếu</Link></li>
-                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/van_nhap_khau">Rượu vang nhập khẩu</Link></li>
+                                            <li className="px-4 py-2 hover:bg-gray-100"><Link to="/ruou_vang_nhap_khau">Rượu vang nhập khẩu</Link></li>
                                             <li className="px-4 py-2 hover:bg-gray-100"><Link to="/hang_sap_ve">Hàng sắp về</Link></li>
                                             <li className="px-4 py-2 hover:bg-gray-100"><Link to="/hang_moi_ve">Hàng mới về</Link></li>
                                             <li className="px-4 py-2 hover:bg-gray-100"><Link to="/san_pham_ban_chay">Sản phẩm bán chạy</Link></li>
