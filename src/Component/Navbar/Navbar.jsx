@@ -7,6 +7,7 @@ import { ShoppingCart } from 'react-feather'; // Assuming you're using react-fea
 function Navbar() {
     const [isOpen, setIsopen] = useState(false);
     const cartCount = 0; // Replace with actual cart count logic
+    
     return (
         <div>
             <nav className="navbar">

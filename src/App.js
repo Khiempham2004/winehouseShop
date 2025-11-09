@@ -22,6 +22,7 @@ import NewarivalWine from './Component/ProductcardWine/NewarivalWine.js';
 import StoreWine from './Component/ProductcardWine/StoreWine.js';
 import ThroughWine from './Component/ProductcardWine/ThroughWine.js';
 import Contact from './Component/Contact/Contact.jsx';
+import ProductWine from './Component/ProductcardWine/ProductWine.js';
 
 
 
@@ -64,6 +65,14 @@ function App() {
           <CartPage />
           <Footer />
         </>} />
+
+        <Route
+          path='/sanpham' element={<>
+            <Navbar />
+            <ProductWine />
+            <Footer />
+          </>}
+        />
 
         <Route path='/ruou_pha' element={<>
           <Navbar />
