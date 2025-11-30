@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const productWine = [
     {
@@ -62,7 +63,7 @@ const productWine = [
         price: "3.900.000₫",
     },
     {
-        id: 6,
+        id: 9,
         name: "Rượu Whisky Nhật Bản",
         image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou36-bd83d465-be7d-4358-a8df-b026930eb5d9.gif?v=1446197036540",
         price: "13.000.000₫",
@@ -70,7 +71,7 @@ const productWine = [
         // discount: "25%",
     },
     {
-        id: 7,
+        id: 10,
         name: "Rượu sake",
         image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou51.jpg?v=1446086843400",
         price: "2.456.000₫",
@@ -78,17 +79,18 @@ const productWine = [
         // discount: "16%",
     },
     {
-        id: 8,
+        id: 11,
         name: "Rượu Mugi Shochu",
         image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou11-2484f54b-d024-47c2-a103-1ad8a15a706f.jpg?v=1446197317800",
         price: "580.000₫",
     },
     {
-        id: 8,
-        name: "Rượu Remy Martin CLUB",
-        image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou24.jpg?v=1445851659983",
-        price: "1.230.000₫",
-        oldPrice: "1.340.000đ"
+        id: 12,
+        name: "Rượu Merlot",
+        image: "https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou43-min-bbe904fd-08cd-4010-a4df-38dff2074c9f.jpg?v=1469500825617",
+        price: "1.290.000₫",
+        oldPrice: "1.450.000đ",
+        discount: "11%"
     },
 ]
 
@@ -159,11 +161,13 @@ export default function ProductWine() {
                                     )}
 
                                     {/* Hình ảnh */}
-                                    <img
-                                        src={item.image}
-                                        alt={item.name}
-                                        className="w-full h-56 object-contain p-4 group-hover:scale-105 transition-transform duration-300"
-                                    />
+                                    <Link to='/https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou16-c6ec3060-8d74-485c-a972-2d77a6233372.jpg?v=1446197510767'>
+                                        <img
+                                            src={item.image}
+                                            alt={item.name}
+                                            className="w-full h-56 object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                                        />
+                                    </Link>
 
                                     {/* Thông tin */}
                                     <div className="text-center p-3 flex flex-col flex-grow justify-between">
@@ -183,7 +187,6 @@ export default function ProductWine() {
                                                 )}
                                             </div>
                                         </div>
-
                                         {/* Nút mua hàng luôn hiển thị */}
                                         <button
                                             onClick={() => handleAddProductwine(item)}
@@ -193,7 +196,6 @@ export default function ProductWine() {
                                         </button>
                                     </div>
                                 </div>
-
                             ))}
                         </div>
                     </div>
