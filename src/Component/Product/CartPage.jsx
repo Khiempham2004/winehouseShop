@@ -12,6 +12,7 @@ export default function CartPage() {
   const totalPrice = cart.reduce((sum, item) => sum + Number(item.price ? item.price.toString().replace(/[^\d]/g, '') : 0) * (item.quantity || 1),
     0
   );
+  console.log("Total Price : ", totalPrice);
 
   const handleIncreaseCart = async (id, fetchCart) => {
     try {

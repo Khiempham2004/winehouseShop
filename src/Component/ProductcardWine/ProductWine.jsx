@@ -94,6 +94,7 @@ const productWine = [
     },
 ]
 
+console.log("Product Wine List:", productWine);
 
 export default function ProductWine() {
     const [productwine, setProductWine] = useState([]);
@@ -161,7 +162,7 @@ export default function ProductWine() {
                                     )}
 
                                     {/* Hình ảnh */}
-                                    <Link to='/https://bizweb.dktcdn.net/thumb/large/100/022/044/products/ruou16-c6ec3060-8d74-485c-a972-2d77a6233372.jpg?v=1446197510767'>
+                                    <Link to={`/product/${item.id}`}>
                                         <img
                                             src={item.image}
                                             alt={item.name}

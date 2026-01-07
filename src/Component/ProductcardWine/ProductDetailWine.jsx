@@ -1,10 +1,11 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import { productWine } from './ProductWine';
+import productWine  from './ProductWine.jsx';
 
 export default function ProductDetailWine() {
     const { id } = useParams();
     const productID = productWine.find(product => product.id === parseInt(id));
+    console.log("Product ID:", productID);
 
     if (!productID) {
         return <h2>Không tìm thấy sản phẩm</h2>;

@@ -1,7 +1,10 @@
+import axios from 'axios';
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
+
+
 export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -18,8 +21,30 @@ export default function Login() {
     alert(`Yêu cầu thay đổi mật khẩu cho email: ${forgotEmail}`)
   };
 
-  const handleSubmit = () => {
-    navigate('/');
+
+  const handleLoginAPI = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post('http://localhost:8000/winehouse/login')
+      console.log("Đăng nhập thành công : ", res.data);
+      alert('Đăng nhập thành công!');
+      navigate('/');
+      // Lưu token vào localStorage
+      localStorage.setItem("token", res.data.token);
+      return {
+        success: true,
+        message: 'Đăng nhập thành công',
+        data: res.data
+      }
+    } catch (error) {
+      console.log("Đăng nhập lỗi : ", error);
+      alert('Đăng nhập thất bại. Vui lòng thử lại.');
+      return {
+        success: false,
+        message: error.response?.data?.message || 'Đăng nhập thất bại',
+        error
+      }
+    }
   }
 
 
@@ -38,7 +63,7 @@ export default function Login() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Login Form */}
           <form
-            onSubmit={handleLogin}
+            onSubmit={handleLoginAPI}
             className="border p-6 rounded-lg shadow-sm space-y-4"
           >
             <p className="text-gray-600">Nếu bạn đã có tài khoản, đăng nhập tại đây.</p>
@@ -68,16 +93,16 @@ export default function Login() {
             </div>
 
             <button
-              onClick={handleSubmit}
+              // onClick={handleSubmit}
               type="submit"
               className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded"
             >
               Đăng nhập
             </button>
 
-            <a href="/register" className="ml-4 text-blue-600">
+            <Link to="/register" className="ml-4 text-blue-600">
               Đăng ký
-            </a>
+            </Link>
 
             {/* Social login */}
             <div className="mt-6">

@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { data, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 
 export default function Register() {
     const [formData, setFormData] = useState({
@@ -65,6 +67,30 @@ export default function Register() {
         }
     };
 
+    const handleRegisterAPI = async (e) => {
+        e.preventDefault();
+        try {
+            const api = await axios.post('/http://localhost:8000/winehouse/register', formData );
+            // console.log("Đăng ký thành công : ", api.data);
+            console.log(formData);
+            navigate('/login');
+            alert('Đăng ký thành công! Vui lòng đăng nhập.');
+            return {
+                success: true,
+                message: 'Đăng ký thành công',
+                data: api.data
+            }
+        } catch (error) {
+            console.log("Đăng ký lỗi : ", error);
+            alert('Đăng ký thất bại. Vui lòng thử lại.');
+            return {
+                success: false,
+                message: error.response?.data?.message || 'Đăng ký thất bại',
+                error
+            }
+        }
+    }
+
     // const handleSubmitSuccess = () => {
     //     navigate('/login'); // Chuyển hướng đến trang đăng nhập sau khi đăng ký thành công
     // };
@@ -79,7 +105,7 @@ export default function Register() {
                         ĐĂNG KÝ TÀI KHOẢN
                     </h2>
 
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form onSubmit={handleRegisterAPI} className="space-y-4">
                         {/* Họ và tên */}
                         <div className="flex gap-4">
                             <div className="flex-1">

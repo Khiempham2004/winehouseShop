@@ -10,19 +10,22 @@ import ProductDetail from './Component/Product/ProductDetail.jsx';
 import Navbar from './Component/Navbar/Navbar.jsx';
 import Introduct from './Component/Introduct/Introduct.jsx';
 import { CartProvider } from './Component/Product/CartContext.jsx';
+import {CartProviderWine} from './Component/ProductcardWine/CardContextWine.jsx';  
 import CartPage from './Component/Product/CartPage.jsx';
-import MixedWine from './Component/ProductcardWine/MixedWine.js';
-import ForeignWine from './Component/ProductcardWine/ForeignWine.js';
-import Wineforpeace from './Component/ProductcardWine/Wineforpeace.js';
-import VolkaWine from './Component/ProductcardWine/VolkaWine.js';
-import ImportedWine from './Component/ProductcardWine/ImportedWine.js';
-import SpicalriceWine from './Component/ProductcardWine/SpicalriceWine.js';
-import BestsellerWine from './Component/ProductcardWine/BestsellerWine.js';
-import NewarivalWine from './Component/ProductcardWine/NewarivalWine.js';
-import StoreWine from './Component/ProductcardWine/StoreWine.js';
-import ThroughWine from './Component/ProductcardWine/ThroughWine.js';
+import MixedWine from './Component/ProductcardWine/MixedWine.jsx';
+import ForeignWine from './Component/ProductcardWine/ForeignWine.jsx';
+import Wineforpeace from './Component/ProductcardWine/Wineforpeace.jsx';
+import VolkaWine from './Component/ProductcardWine/VolkaWine.jsx';
+import ImportedWine from './Component/ProductcardWine/ImportedWine.jsx';
+import SpicalriceWine from './Component/ProductcardWine/SpicalriceWine.jsx';
+import BestsellerWine from './Component/ProductcardWine/BestsellerWine.jsx';
+import NewarivalWine from './Component/ProductcardWine/NewarivalWine.jsx';
+import StoreWine from './Component/ProductcardWine/StoreWine.jsx';
+import ThroughWine from './Component/ProductcardWine/ThroughWine.jsx';
 import Contact from './Component/Contact/Contact.jsx';
-import ProductWine from './Component/ProductcardWine/ProductWine.js';
+import ProductWine from './Component/ProductcardWine/ProductWine.jsx';
+import ProductDetailWine from './Component/ProductcardWine/ProductDetailWine.jsx';
+import AddToCardModal from './Component/ProductcardWine/AddtocardModal.jsx';
 
 
 
@@ -32,6 +35,7 @@ function App() {
   // const [cartItems, setCartItems] = useState([]); // Giỏ hàng
   // const [quantity, setQuantity] = useState(1); // Số lượng sản phẩm 
   return (
+
     <CartProvider>
       <Routes>
         <Route path="/" element={<Following />} />
@@ -55,7 +59,7 @@ function App() {
           </>
         } />
 
-        <Route path='/product-detail' element={<>
+        <Route path='/product/:id' element={<>
           <Navbar />
           <ProductDetail />
         </>} />
@@ -140,6 +144,9 @@ function App() {
           <Contact />
           <Footer />
         </>} />
+
+        <Route path='/product/:id' element={<><ProductDetailWine /></>} />
+          <Route path='/add-to-cart' element={<><AddToCardModal /></>} />
 
         <Route path='/footer' element={<Footer />} />
       </Routes>

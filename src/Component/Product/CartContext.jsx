@@ -17,7 +17,7 @@ export const CartProvider = ({ children }) => {
             const response = await axios.get("http://localhost:8000/winehouse/cart");
             setCart(response.data);
         } catch (error) {
-            console.error("Error fetching cart: ", error);
+            console.log("Error fetching cart: ", error);
         }
     };
 
@@ -84,9 +84,23 @@ export const CartProvider = ({ children }) => {
         );
     };
 
+
+    // Giỏ hàng rượu ProductCardWine
+    const [cartWine, setCartWine] = useState([]);
+    const [modalProductWine, setModalProductWine] = useState(null);
+
+    const AddToCardWine = (product) => {
+        setCartWine(prevCart => [...prevCart, product]);
+        setModalProductWine(product);// mo popup khi them san pham vao gio hang
+    };
+
+    const CloseModal = () => {
+        setModalProductWine(null);
+    }
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantify, addToCartDetail, handleUpdateQuantity, handleRemoveCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantify, addToCartDetail, handleUpdateQuantity, handleRemoveCart, cartWine, AddToCardWine, modalProductWine, CloseModal }}>
             {children}
         </CartContext.Provider>
-    )
+    )   
 }
